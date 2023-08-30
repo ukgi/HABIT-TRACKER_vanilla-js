@@ -34,6 +34,10 @@ header {
   gap: 1rem;
 }
 
+header > h1 {
+  font-size: 2rem;
+}
+
 .header-count {
   width: 3rem;
   height: 3rem;
@@ -72,12 +76,17 @@ section > form {
 
 /* 구체적인 선택자를 정하자 */
 #habit-tracker input {
+  padding: 0.5rem;
   width: 80%;
   height: 100%;
   outline: none;
   border: 2px solid black;
   background-color: inherit;
   font-size: 1.5rem;
+}
+
+#habit-tracker input::placeholder {
+  font-size: 1rem;
 }
 
 .habit-list {
@@ -89,16 +98,22 @@ section > form {
 }
 
 .habit-item {
+  margin-bottom: 0.5rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 3rem;
 }
 
 .habit-item__title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.habit-item__title > h2 {
+  font-size: 1.5rem;
 }
 
 .habit-item__title > span {
@@ -117,19 +132,19 @@ section > form {
 
 .habit-item__operator {
   margin-right: 10rem;
-  width: 7rem;
+  width: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.3rem;
 }
 
-.habit-item__operator button {
+.habit-item__operator i {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin: 0;
   border-radius: 0.5rem;
   background-color: lightsalmon;
@@ -137,8 +152,8 @@ section > form {
   color: #ffff;
 }
 
-.habit-item__operator button i {
-  font-size: 2rem;
+.habit-item__operator i {
+  font-size: 1.5rem;
 }
 
 footer {
@@ -150,6 +165,7 @@ footer {
 
 .addBtn,
 .resetBtn {
+  padding: 0.5rem;
   background-color: darkgreen;
   border: none;
 
@@ -157,7 +173,7 @@ footer {
   color: #ffff;
 }
 
-.habit-item__operator button:hover {
+.habit-item__operator i:hover {
   opacity: 0.5;
 }
 
@@ -165,4 +181,59 @@ footer {
 .resetBtn:hover {
   background-color: lightsalmon;
   opacity: 1;
+}
+
+/* responsive  */
+@media (max-width: 1050px) {
+  .habit-item__operator {
+    width: 7rem;
+  }
+  .habit-item__operator i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    border-radius: 0.5rem;
+    background-color: lightsalmon;
+    border: none;
+    color: #ffff;
+  }
+
+  .habit-item__operator i {
+    font-size: 1rem;
+  }
+
+  .habit-item__title > span {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .addBtn,
+  .resetBtn {
+    padding: 0.5rem;
+    background-color: darkgreen;
+    border: none;
+
+    font-size: 1rem;
+    color: #ffff;
+  }
+
+  #habit-tracker input {
+    font-size: 1rem;
+  }
+
+  #habit-tracker input::placeholder {
+    font-size: 0.7rem;
+  }
+
+  header > h1 {
+    font-size: 1.5rem;
+  }
+
+  .habit-item__title > h2 {
+    font-size: 1.2rem;
+  }
 }

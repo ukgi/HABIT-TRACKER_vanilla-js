@@ -20,13 +20,9 @@ export default class HabitItem {
           <span id=${countId} class="habit-item__count">${this.count}</span>
       </div>
       <div class="habit-item__operator">
-          <button>
-              <i class="fas fa-plus"></i>
-          </button>
-          <button>
-              <i class="fas fa-minus"></i>
-          </button>
-          <button><i class="fas fa-trash"></i></button>
+        <i class="fas fa-plus"></i>
+        <i class="fas fa-minus"></i>
+        <i class="fas fa-trash"></i>
       </div>
       `;
     this.ul.appendChild(li);
@@ -54,7 +50,6 @@ export default class HabitItem {
     } else {
       headerCountArr.push(this.item.getAttribute('id'));
       this.headerCount.textContent = headerCountArr.length;
-      console.log(headerCountArr);
     }
   }
   minus() {

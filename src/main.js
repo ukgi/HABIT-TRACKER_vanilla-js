@@ -4,6 +4,10 @@ const form = document.querySelector('form');
 const resetBtn = document.querySelector('.resetBtn');
 const habitList = document.querySelector('.habit-list');
 
+function reset() {
+  [...habitList.children].forEach((li) => li.remove());
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!e.target[0].value) {
@@ -21,7 +25,3 @@ form.addEventListener('submit', (e) => {
 resetBtn.addEventListener('click', () => {
   return confirm('모든 습관들을 삭제하시겠습니까?') ? reset() : null;
 });
-
-function reset() {
-  [...habitList.children].forEach((li) => li.remove());
-}
